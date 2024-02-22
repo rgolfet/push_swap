@@ -6,17 +6,42 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:54:38 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 02:56:28 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/22 14:12:44 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sort_b(long *taba, long *tabb, long *index)
+// int	ft_sort_b(long *tabb, long *index) TRUE
+// {
+// 	long	count;
+// 	float	chunk;
+// 	long	siz;
+
+// 	count = 0;
+// 	chunk = ft_chunk(index);
+// 	siz = ft_size_3(index);
+// 	while (ft_size_3(index) >= 3)
+// 	{
+// 		if (index[0] == siz || index[0] == (siz - 1) || index[0] == (siz - 2))
+// 			ft_rotate_a(index);
+// 		else if (index[0] <= count)
+// 			ft_push_b(index, tabb);
+// 		else if (index[0] <= (count + chunk))
+// 			ft_pr(tabb, index);
+// 		else
+// 			ft_rotate_a(index);
+// 		count++;
+// 	}
+// 	ft_sort_3(index);
+// 	return (1);
+// }
+
+void	ft_sort_b(long *tabb, long *index)
 {
-	size_t	count;
+	long	count;
 	float	chunk;
-	size_t	siz;
+	long	siz;
 
 	count = 0;
 	chunk = ft_chunk(index);
@@ -26,20 +51,24 @@ int	ft_sort_b(long *taba, long *tabb, long *index)
 		if (index[0] == siz || index[0] == (siz - 1) || index[0] == (siz - 2))
 			ft_rotate_a(index);
 		else if (index[0] <= count)
+		{
 			ft_push_b(index, tabb);
+			count++;
+		}
 		else if (index[0] <= (count + chunk))
-			ft_pr(taba, tabb, index);
+		{
+			ft_pr(tabb, index);
+			count++;
+		}
 		else
 			ft_rotate_a(index);
-		count++;
 	}
 	ft_sort_3(index);
-	return (1);
 }
 
 size_t	ft_reverse_sort_a(long *index, long *tabb)
 {
-	size_t	cmp;
+	long	cmp;
 
 	cmp = ft_size_tab(tabb);
 	if (tabb[0] == cmp)
@@ -54,7 +83,7 @@ size_t	ft_reverse_sort_a(long *index, long *tabb)
 
 size_t	ft_sort_a(long *index, long *tabb)
 {
-	size_t	cmp;
+	long	cmp;
 
 	cmp = ft_size_tab(tabb);
 	while (tabb[0] != 2147483648)

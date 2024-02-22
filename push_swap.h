@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:49:08 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 03:02:23 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/22 14:13:05 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long long	ft_latoi(const char *str);
 long		*ft_fill(int argc, char **argv);
 int			ft_overflow_(long *tab, int argc);
 int			ft_int(char *arg);
-int			ft_check(char **argv, int argc, long *tab_a);
+int			ft_check(char **argv);
 size_t		ft_strlen(char *str);
 int			ft_size(char **argv, ssize_t i);
 int			ft_swap(long *nb1, long *nb2);
@@ -43,8 +43,8 @@ int			ft_reverse_rotate_all(long *taba, long *tabb);
 int			ft_sort_check(long *tab_a, int size_a, int size_b);
 int			ft_double(long *tab, int argc);
 long		*ft_index(long *tab, ssize_t size);
-size_t		ft_pr(long *taba, long *tabb, long *index);
-int			ft_sort_b(long *taba, long *tabb, long *index);
+size_t		ft_pr(long *tabb, long *index);
+void		ft_sort_b(long *tabb, long *index);
 float		ft_chunk(long *taba);
 long		*ft_stack_index_b(int argc);
 int			ft_up_find(long *tab);

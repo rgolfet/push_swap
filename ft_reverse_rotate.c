@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:04:41 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 03:05:02 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/21 04:51:00 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	ft_reverse_rotate_all(long *taba, long *tabb)
 		ft_reverse_rotate(taba);
 	if (tabb[0] != 2147483648 && tabb[1] != 2147483648)
 		ft_reverse_rotate(tabb);
-	if (taba[0] != 2147483648 && taba[1] != 2147483648
-		|| tabb[0] != 2147483648 && tabb[1] != 2147483648)
+	if (taba[0] != 2147483648 && (taba[1] != 2147483648
+		|| tabb[0] != 2147483648) && tabb[1] != 2147483648)
 		return (write(1, "rrr Impossible\n", 15), 0);
 	return (write(1, "rrr\n", 4), 1);
 }

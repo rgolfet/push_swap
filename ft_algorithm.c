@@ -6,13 +6,13 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:54:30 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 02:54:31 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/21 04:42:38 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_pr(long *taba, long *tabb, long *index)
+size_t	ft_pr(long *tabb, long *index)
 {
 	ft_push_b(index, tabb);
 	ft_rotate_b(tabb);

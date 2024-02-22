@@ -6,13 +6,13 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:01:43 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 03:01:44 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/21 04:40:17 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check(char **argv, int argc, long *tab_a)
+int	ft_check(char **argv)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ int	ft_check(char **argv, int argc, long *tab_a)
 
 int	ft_sort_check(long *tab_a, int size_a, int size_b)
 {
-	size_t	i;
+	int	i;
 
 	if (size_a < 1)
 		return (0);

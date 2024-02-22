@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:57:32 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 02:58:08 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/21 04:55:12 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long	*ft_stack_index_b(int argc)
 {
 	long	*tab;
-	size_t	i;
+	int	i;
 
 	i = 0;
 	tab = malloc(sizeof(long) * (argc));
@@ -69,8 +69,8 @@ float	ft_chunk(long *taba)
 
 int	ft_up_find(long *tab)
 {
-	size_t	i;
-	size_t	j;
+	long	i;
+	long	j;
 
 	i = 0;
 	j = 0;

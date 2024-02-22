@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:53:10 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 03:18:19 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/21 05:17:32 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long	*ft_fill(int argc, char **argv)
 {
 	long		*tab;
-	size_t		i;
+	int		i;
 	size_t		j;
 
 	i = 1;
@@ -35,7 +35,7 @@ long	*ft_fill(int argc, char **argv)
 long	*ft_stack_2(int argc)
 {
 	long	*tab2;
-	size_t	i;
+	int	i;
 
 	i = 0;
 	tab2 = malloc(sizeof(long) * (argc));
@@ -64,16 +64,23 @@ int	main(int argc, char **argv)
 	tab_a = ft_fill(argc, argv);
 	if (ft_overflow_(tab_a, argc) == -1 || ft_double(tab_a, argc) == -1)
 		return (write(2, "ErrOr\n", 6), -1);
-		if (ft_check(argv, argc, tab_a))
-			return (-1);
+	if (ft_check(argv))
+		return (-1);
 	if (argc < 4)
 		return (ft_less_than_four(tab_a));
 	index = ft_index(tab_a, argc);
 	if (ft_nb_check(index) == 1)
 		return (1);
 	tab_b = ft_stack_2(argc);
-	ft_sort_b(tab_a, tab_b, index);
+	ft_sort_b(tab_b, index);
 	ft_sort_a(index, tab_b);
+
+	// int i = 0;
+	// while (index[i] != 2147483648)
+	// {
+	// 	printf("index[%i] = %zi\n", i, index[i]);
+	// 	i++;
+	// }
 	free(tab_b);
 	free(tab_a);
 	free(index);
