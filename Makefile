@@ -6,11 +6,11 @@
 #    By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 03:07:58 by rgolfett          #+#    #+#              #
-#    Updated: 2024/02/21 04:41:00 by rgolfett         ###   ########lyon.fr    #
+#    Updated: 2024/02/23 14:19:56 by rgolfett         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 
 SRC = ft_check.c \
       ft_latoi.c \
@@ -34,11 +34,10 @@ DEPS = push_swap.h
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) -rc $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
-
 
 clean:
 	$(RM) $(OBJ)

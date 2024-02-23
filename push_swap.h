@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:49:08 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/22 14:13:05 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/22 14:34:58 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 
 long long	ft_latoi(const char *str);
-long		*ft_fill(int argc, char **argv);
+long		*ft_fill(long *tab_a, int argc, char **argv);
 int			ft_overflow_(long *tab, int argc);
 int			ft_int(char *arg);
 int			ft_check(char **argv);

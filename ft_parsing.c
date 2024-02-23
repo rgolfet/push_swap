@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:58:45 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 04:47:59 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/23 14:21:36 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	ft_int(char *arg)
 	size_t	i;
 
 	i = 0;
-	if (arg[0] == '-' && (arg[i++] || arg[0] == '+' )&& arg[i++])
-		i++;
-	if (arg[0] == '-' && !arg[1])
-		return (-1);
 	while (arg[i])
 	{
+		if ((arg[i] == '-' && arg[i +1]) || (arg[i] == '+' && arg[i +1]))
+			i++;
 		if (!(arg[i] >= 48 && arg[i] <= 57))
 			return (-1);
 		i++;
@@ -38,7 +36,9 @@ int	ft_overflow_(long *tab, int argc)
 	while (i < (argc - 1))
 	{
 		if (tab[i] < -2147483648 || tab[i] > 2147483647)
+		{
 			return (-1);
+		}
 		i++;
 	}
 	tab[i] = 2147483648;
@@ -54,9 +54,9 @@ int	ft_size(char **argv, ssize_t i)
 
 int	ft_double(long *tab, int argc)
 {
-	int	i;
-	int	j;
-	long			cmpr;
+	int		i;
+	int		j;
+	long	cmpr;
 
 	i = 0;
 	j = 0;

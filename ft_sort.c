@@ -6,36 +6,11 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:54:38 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/22 14:12:44 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/22 14:19:04 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// int	ft_sort_b(long *tabb, long *index) TRUE
-// {
-// 	long	count;
-// 	float	chunk;
-// 	long	siz;
-
-// 	count = 0;
-// 	chunk = ft_chunk(index);
-// 	siz = ft_size_3(index);
-// 	while (ft_size_3(index) >= 3)
-// 	{
-// 		if (index[0] == siz || index[0] == (siz - 1) || index[0] == (siz - 2))
-// 			ft_rotate_a(index);
-// 		else if (index[0] <= count)
-// 			ft_push_b(index, tabb);
-// 		else if (index[0] <= (count + chunk))
-// 			ft_pr(tabb, index);
-// 		else
-// 			ft_rotate_a(index);
-// 		count++;
-// 	}
-// 	ft_sort_3(index);
-// 	return (1);
-// }
 
 void	ft_sort_b(long *tabb, long *index)
 {
