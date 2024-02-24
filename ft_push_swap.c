@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:53:10 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/23 14:22:22 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/24 16:41:36 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,11 @@ long	*ft_stack_2(int argc)
 	return (tab2);
 }
 
-int	ft_less_than_four(long *tab)
+void	ft_free(long *tab1, long *tab2, long *tab3)
 {
-	return (ft_sort_3(tab));
+	free(tab1);
+	free(tab2);
+	free(tab3);
 }
 
 int	main(int argc, char **argv)
@@ -62,22 +64,23 @@ int	main(int argc, char **argv)
 
 	tab_a = NULL;
 	if (argc < 2)
-		return (write(2, "ErRoR\n", 6), -1);
+		return (-1);
 	tab_a = ft_fill(tab_a, argc, argv);
-	if (ft_overflow_(tab_a, argc) == -1 || ft_double(tab_a, argc) == -1)
-		return (free(tab_a), write(2, "ErrOr\n", 6), -1);
-	if (ft_check(argv))
-		return (free(tab_a), -1);
-	if (argc < 4)
-		return (ft_less_than_four(tab_a), free(tab_a), 1);
-	index = ft_index(tab_a, argc);
-	if (ft_nb_check(index) == 1)
-		return (free(tab_a), free (index), 1);
 	tab_b = ft_stack_2(argc);
+	if (tab_a == NULL || tab_b == NULL)
+		return (ft_free(tab_a, tab_b, NULL), -1);
+	if (ft_overflow_(tab_a, argc) == -1
+		|| ft_double(tab_a, argc) == -1 || ft_check(argv) == -1)
+		return (ft_free(tab_a, tab_b, NULL), write(2, "ErrOr\n", 6), -1);
+	if (argc < 4)
+		return (ft_sort_3(tab_a), ft_free(tab_a, tab_b, NULL), -1);
+	index = ft_index(tab_a, argc);
+	if (index == NULL)
+		return (ft_free(tab_a, tab_b, index), -1);
+	if (ft_nb_check(index) == 1)
+		return (ft_free(tab_a, tab_b, index), 0);
 	ft_sort_b(tab_b, index);
 	ft_sort_a(index, tab_b);
-	free(tab_b);
-	free(tab_a);
-	free(index);
-	return (1);
+	ft_free(index, tab_a, tab_b);
+	return (0);
 }

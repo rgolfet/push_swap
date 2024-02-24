@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:01:43 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/21 04:40:17 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/24 16:31:34 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_check(char **argv)
 	while (argv[i])
 	{
 		if (ft_int(argv[i]) == -1 || ft_size(argv, i) == -1)
-			return (write(1, "ERRor\n", 6), -1);
+			return (-1);
 		i++;
 	}
 	return (0);

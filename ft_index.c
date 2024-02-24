@@ -6,7 +6,7 @@
 /*   By: rgolfett <rgolfett@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:57:32 by rgolfett          #+#    #+#             */
-/*   Updated: 2024/02/23 14:21:02 by rgolfett         ###   ########lyon.fr   */
+/*   Updated: 2024/02/24 16:20:24 by rgolfett         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ long	*ft_stack_index_b(int argc)
 
 	i = 0;
 	tab = malloc(sizeof(long) * (argc));
+	if (!tab)
+		return (NULL);
 	while (i < (argc))
 	{
 		tab[i] = 0;
@@ -35,20 +37,20 @@ long	*ft_index(long *tab, ssize_t size)
 	ssize_t		ind;
 
 	index = malloc(sizeof(long) * (size));
-	i = 0;
-	j = 1;
+	if (!index)
+		return (NULL);
+	i = -1;
+	j = 0;
 	ind = 0;
-	while (tab[i] != 2147483648)
+	while (tab[++i] != 2147483648)
 	{
-		while (tab[j] != 2147483648)
+		while (tab[++j] != 2147483648)
 		{
 			if (tab[i] > tab[j])
 				ind++;
-			j++;
 		}
 		index[i] = ind;
-		i++;
-		j = 0;
+		j = -1;
 		ind = 0;
 	}
 	index[i] = 2147483648;
